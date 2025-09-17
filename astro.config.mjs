@@ -27,7 +27,7 @@ import { pluginCustomCopyButton } from "./src/plugins/expressive-code/custom-cop
 // https://astro.build/config
 export default defineConfig({
 	site: 'https://cloudybae.github.io',
-	base: "/garden-blog",
+	base: "/yoons-garden",
 	trailingSlash: "always",
 	integrations: [
 		tailwind({
