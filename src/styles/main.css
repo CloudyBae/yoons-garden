@@ -112,8 +112,32 @@
     }
 }
 
-.custom-md img, #post-cover img {
-    @apply cursor-zoom-in
+/* Images inside markdown content */
+.custom-md img {
+    @apply cursor-zoom-in w-full max-w-[250px] h-auto mx-auto;
+}
+
+/* Post cover image (keep it full-width) */
+#post-cover img {
+    @apply w-full max-w-[300px] h-auto mx-auto rounded-lg;
+}
+
+/* Paragraph that contains an image */
+.custom-md p:has(> img) {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: -2rem; /* tighten space under the image */
+  margin-top: -2rem;
+}
+
+/* Caption paragraph right after the image */
+.custom-md p:has(> img) + p {
+  text-align: center;
+  margin-top: 0;          /* remove extra gap above caption */
+  font-size: 0.875rem;    /* ~ text-sm */
+  color: rgb(0 0 0 / 0.75);  /* similar to text-75 */
+  font-style: italic;     /* since you’re using *...* */
 }
 
 ::selection {
